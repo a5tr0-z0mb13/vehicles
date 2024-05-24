@@ -1,12 +1,10 @@
 {
+  "printWidth": 100,
   "tabWidth": 2,
-  "useTabs": false,
+  "tabs": false,
+  "embeddedLanguageFormatting": "off",
   "singleQuote": true,
-  "semi": true,
-  "bracketSpacing": true,
-  "arrowParens": "avoid",
-  "trailingComma": "es5",
-  "bracketSameLine": true,
-  "printWidth": 80,
-  "endOfLine": "auto"
+  "semicolon": true,
+  "quoteProps": "preserve",
+  "bracketSpacing": false
 }
