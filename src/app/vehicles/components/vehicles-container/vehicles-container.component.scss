@@ -1,0 +1,22 @@
+.vehicles-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  @media (max-width: 599.98px) and (orientation: portrait), (max-width: 959.98px) and (orientation: landscape) {
+    // background: url('/assets/images/mobile.png');
+    flex-direction: column;
+  }
+
+  @media (min-width: 600px) and (max-width: 839.98px) and (orientation: portrait), (min-width: 960px) and (max-width: 1279.98px) and (orientation: landscape) {
+    // background: url('/assets/images/tablet.png');
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 840px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
+    // background: url('/assets/images/desktop.png');
+    // background-position: 0 -4px;
+    flex-direction: row;
+  }
+}
