@@ -1,27 +1,8 @@
-import { Meta, Vehicle, VehicleDetail } from '../../models';
+import { vehicle } from '../../../../../cypress/fixtures';
+
 import { VehicleComponent } from './vehicle.component';
 
 describe('VehicleComponent', () => {
-  const vehicle: Vehicle & VehicleDetail = {
-    id: 'aa',
-    name: 'AA',
-    description: 'Lorem ipsum dolor sit amet',
-    modelYear: 'a1',
-    apiUrl: '/api/vehicles/aa',
-    media: [
-      {
-        name: 'vehicle',
-        url: '/images/16x9/aa_a1.jpg',
-      },
-      {
-        name: 'vehicle',
-        url: '/images/1x1/aa_a1.jpg',
-      },
-    ],
-    price: '£99,999',
-    meta: {} as Meta,
-  };
-
   it('should display the vehicle name, price and description and an appropriate image, depending on the viewport', () => {
     cy.mount(VehicleComponent, {
       imports: [VehicleComponent],
