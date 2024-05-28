@@ -1,4 +1,4 @@
-import {defineConfig} from 'cypress';
+import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
@@ -6,5 +6,13 @@ export default defineConfig({
     // setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions): void {
     //   implement node event listeners here
     // },
+    specPattern: 'cypress/e2e/**/*.ts',
+  },
+  component: {
+    devServer: {
+      framework: 'angular',
+      bundler: 'webpack',
+    },
+    specPattern: 'src/**/*.cy.ts',
   },
 });

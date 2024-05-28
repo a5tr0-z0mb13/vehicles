@@ -32,6 +32,13 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto",
+            "bracketSpacing": "true"
+          }
         ]
       }
     },
