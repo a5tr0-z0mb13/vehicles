@@ -8,7 +8,9 @@ import { VehicleDetailsService, VehiclesService } from '../../services';
 import { VehicleComponent } from '../vehicle/vehicle.component';
 
 /**
- * Displays a list of vehicles / vehicle details
+ * Displays a list of vehicles / vehicle details.
+ *
+ * TODO Implement error handling.
  */
 @Component({
   standalone: true,

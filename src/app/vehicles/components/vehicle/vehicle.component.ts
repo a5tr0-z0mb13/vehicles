@@ -7,6 +7,11 @@ import {
   MediaSourcePipe,
 } from '../../pipes';
 
+/**
+ * Displays a vehicle's details.
+ *
+ * TODO Implement responsive layout.
+ */
 @Component({
   selector: 'app-vehicle',
   standalone: true,
