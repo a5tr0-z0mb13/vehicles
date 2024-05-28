@@ -7,7 +7,8 @@ Very much a work in progress.
 TODO:
 
 * Error handling
-* Responsiveness
+* Use correct font(s)
+* Implement responsiveness
 * e2e tests?
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
