@@ -1,5 +1,7 @@
 <div class="vehicles-container">
-  <app-vehicle
-    *ngFor="let vehicle of vehicles"
-    [vehicle]="vehicle"></app-vehicle>
+  @for (vehicle of vehicles; track vehicle) {
+    @if (vehicle | isVehicleDetail) {
+      <app-vehicle [vehicle]="vehicle"></app-vehicle>
+    }
+  }
 </div>

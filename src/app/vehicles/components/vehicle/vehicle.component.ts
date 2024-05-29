@@ -1,23 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Vehicle, VehicleDetail } from '../../models';
-import { NgFor, NgIf } from '@angular/common';
-import {
-  IsVehicleDetailPipe,
-  MediaClassPipe,
-  MediaSourcePipe,
-} from '../../pipes';
+import { MediaClassPipe, MediaSourcePipe } from '../../pipes';
 
 /**
  * Displays a vehicle's details.
- *
- * TODO Implement responsive layout.
  */
 @Component({
   selector: 'app-vehicle',
   standalone: true,
-  imports: [IsVehicleDetailPipe, MediaClassPipe, MediaSourcePipe, NgFor, NgIf],
+  imports: [MediaClassPipe, MediaSourcePipe],
   templateUrl: './vehicle.component.html',
   styleUrl: './vehicle.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VehicleComponent {
   @Input() public vehicle!: Vehicle & VehicleDetail;

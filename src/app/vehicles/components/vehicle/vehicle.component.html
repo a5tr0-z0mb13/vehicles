@@ -1,10 +1,8 @@
-<div class="vehicle" *ngIf="vehicle | isVehicleDetail">
+<div class="vehicle">
   <div class="vehicle__image">
-    <img
-      *ngFor="let media of vehicle.media"
-      class="{{ media | mediaClass }}"
-      src="{{ media | mediaSrc }}"
-      alt="{{ media.name }}" />
+    @for (media of vehicle.media; track media) {
+      <img class="{{ media | mediaClass }}" src="{{ media | mediaSrc }}" alt="{{ media.name }}" />
+    }
   </div>
   <div class="vehicle__content">
     <div class="vehicle__name">{{ vehicle.name }}</div>

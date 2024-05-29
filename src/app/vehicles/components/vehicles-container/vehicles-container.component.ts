@@ -1,9 +1,9 @@
-import { NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 import { catchError, concatMap, forkJoin, map, of } from 'rxjs';
 
 import { Vehicle, VehicleDetail } from '../../models';
+import { IsVehicleDetailPipe } from '../../pipes';
 import { VehicleDetailsService, VehiclesService } from '../../services';
 import { VehicleComponent } from '../vehicle/vehicle.component';
 
@@ -14,14 +14,16 @@ import { VehicleComponent } from '../vehicle/vehicle.component';
  */
 @Component({
   standalone: true,
-  imports: [NgFor, VehicleComponent],
+  imports: [IsVehicleDetailPipe, VehicleComponent],
   templateUrl: './vehicles-container.component.html',
   styleUrl: './vehicles-container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VehiclesContainerComponent implements OnInit {
   public vehicles?: (Vehicle & VehicleDetail)[];
 
   constructor(
+    private changeDetectorRef: ChangeDetectorRef,
     private vehiclesService: VehiclesService,
     private vehicleDetailsService: VehicleDetailsService
   ) {}
@@ -55,6 +57,7 @@ export class VehiclesContainerComponent implements OnInit {
       )
       .subscribe((vehicles: (Vehicle & VehicleDetail)[]) => {
         this.vehicles = vehicles;
+        this.changeDetectorRef.detectChanges();
       });
   }
 }
